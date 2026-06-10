@@ -1,16 +1,16 @@
 # ==========================================
 # กลุ่มที่ 1: สายหลัก (ใช้โค้ด src/index.js)
 # ==========================================
-name = "dootvz-worker-01"
+name = "dootvz-01"
 main = "src/index.js"
 compatibility_date = "2026-06-04"
 
 [env.dootvz-worker_02]
-name = "dootvz-worker-02"
+name = "dootvz-02"
 main = "src/index.js"
 
 [env.dootvz-worker_03]
-name = "dootvz-worker-03"
+name = "dootvz-03"
 main = "src/index.js"
 
 
@@ -18,13 +18,13 @@ main = "src/index.js"
 # กลุ่มที่ 2: สายดูบอล (ใช้โค้ด src/db66.js)
 # ==========================================
 [env.dootvz66_01]
-name = "dootvz66-worker-01"
+name = "db66-01"
 main = "src/db66.js"
 
 [env.dootvz66_02]
-name = "dootvz66-worker-02"
+name = "db66-02"
 main = "src/db66.js"
 
 [env.dootvz66_03]
-name = "dootvz66-worker-03"
+name = "db66-03"
 main = "src/db66.js"
