@@ -1,0 +1,61 @@
+name: Deploy Cloudflare Worker
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # ------------------------------------------
+      # พาร์ทที่ 1: Deploy กลุ่มสายหลัก (index.js)
+      # ------------------------------------------
+      - name: Deploy IPTV Main 01
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: '4.98.0'
+          command: deploy
+
+      - name: Deploy IPTV Main 02
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: '4.98.0'
+          command: deploy --env dootvz-worker_02
+
+      - name: Deploy IPTV Main 03
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: '4.98.0'
+          command: deploy --env dootvz-worker_03
+
+      # ------------------------------------------
+      # พาร์ทที่ 2: Deploy กลุ่มสายดูบอล (db66.js)
+      # ------------------------------------------
+      - name: Deploy dootvz66 01
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: '4.98.0'
+          command: deploy --env dootvz66_01
+
+      - name: Deploy dootvz66 02
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: '4.98.0'
+          command: deploy --env dootvz66_02
+
+      - name: Deploy dootvz66 03
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: '4.98.0'
+          command: deploy --env dootvz66_03
