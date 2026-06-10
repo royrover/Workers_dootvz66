@@ -17,14 +17,14 @@ main = "src/index.js"
 # ==========================================
 # กลุ่มที่ 2: สายดูบอล (ใช้โค้ด src/db66.js)
 # ==========================================
-[env.dootvz66_01]
+[env.dootvz66-worker_01]
 name = "db66-01"
 main = "src/db66.js"
 
-[env.dootvz66_02]
+[env.dootvz66-worker_02]
 name = "db66-02"
 main = "src/db66.js"
 
-[env.dootvz66_03]
+[env.dootvz66-worker_03]
 name = "db66-03"
 main = "src/db66.js"

@@ -27,14 +27,14 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           wranglerVersion: '4.98.0'
-          command: deploy --env dootvz_02
+          command: deploy --env dootvz-worker_02
 
       - name: Deploy IPTV Main 03
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           wranglerVersion: '4.98.0'
-          command: deploy --env dootvz_03
+          command: deploy --env dootvz-worker_03
 
       # ------------------------------------------
       # พาร์ทที่ 2: Deploy กลุ่มสายดูบอล (db66.js)
@@ -44,18 +44,18 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           wranglerVersion: '4.98.0'
-          command: deploy --env dootvz66_01
+          command: deploy --env dootvz66-worker_01
 
       - name: Deploy dootvz66 02
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           wranglerVersion: '4.98.0'
-          command: deploy --env dootvz66_02
+          command: deploy --env dootvz66-worker_02
 
       - name: Deploy dootvz66 03
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           wranglerVersion: '4.98.0'
-          command: deploy --env dootvz66_03
+          command: deploy --env dootvz66-worker_03
